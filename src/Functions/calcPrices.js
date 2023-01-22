@@ -6,14 +6,14 @@ export const calcPrices = (product) => {
   const allVATs = [];
   const allPricesAndVATs = [];
 
-  if (product.length > 0) {
-    allPrices.push(product.priceWithoutVAT);
-    allVATs.push(product.addedVAT);
-    allPricesAndVATs.push(product.totalPrice);
+  allPrices.push(product.priceWithoutVAT);
+  allVATs.push(product.addedVAT);
+  allPricesAndVATs.push(product.totalPrice);
 
-    prices = allPrices.reduce((acc, el) => acc + el);
-    VATs = allVATs.reduce((acc, el) => acc + el);
-    pricesAndVATs = allPricesAndVATs.reduce((acc, el) => acc + el);
-    console.log(prices, VATs, pricesAndVATs);
-  }
+  prices = allPrices.reduce((acc, el) => acc + el);
+  VATs = allVATs.reduce((acc, el) => acc + el);
+  pricesAndVATs = allPricesAndVATs.reduce((acc, el) => acc + el);
+  console.log(prices, VATs, pricesAndVATs);
+
+  return { prices, VATs, pricesAndVATs };
 };

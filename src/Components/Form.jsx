@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { formContext } from "../Context Object/formContext";
+import { formContext } from "../State/appContext";
 const Form = ({ handleSubmit }) => {
   const {
     productName,
@@ -19,56 +19,64 @@ const Form = ({ handleSubmit }) => {
       className="d-flex flex-column w-25 my-5 mx-auto"
       onSubmit={(e) => handleSubmit(e)}
     >
-      <label htmlFor="name" className="my-1">
-        <strong>Product's Name</strong>
-      </label>
-      <input
-        className="my-1 form-control"
-        type="text"
-        value={productName}
-        placeholder="Product's name"
-        id="name"
-        onChange={(e) => setProductName(e.target.value)}
-      />
-      <label htmlFor="qty" className="my-1">
-        <strong>Product's QTY</strong>
-      </label>
-      <input
-        className="my-1 form-control"
-        type="number"
-        min={0}
-        value={productQTY}
-        placeholder="Product's QTY"
-        id="qty"
-        onChange={(e) => setProductQTY(Number(e.target.value))}
-      />
-      <label htmlFor="price" className="my-1">
-        <strong>Product's Price</strong>
-      </label>
-      <input
-        type="number"
-        className="my-1 form-control"
-        id="price"
-        min={0}
-        value={productPrice}
-        step={0.01}
-        placeholder="Product's Price"
-        onChange={(e) => setProductPrice(Number(e.target.value))}
-      />
-      <label htmlFor="discount" className="my-1">
-        <strong>Product's Discount</strong>
-      </label>
-      <input
-        type="number"
-        className="my-1 form-control"
-        id="discount"
-        value={productDiscount}
-        min={0}
-        step={0.01}
-        placeholder="Max value of Discount can be 50% of price"
-        onChange={(e) => setProductDiscount(Number(e.target.value))}
-      />
-      <div className="vat w-75 d-flex justify-content-around align-items-center my-1">
+      <div className="form-group">
+        <label htmlFor="name" className="my-1">
+          <strong>Product's Name</strong>
+        </label>
+        <input
+          className="my-1 form-control"
+          type="text"
+          value={productName}
+          placeholder="Product's name"
+          id="name"
+          onChange={(e) => setProductName(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="qty" className="my-1">
+          <strong>Product's QTY</strong>
+        </label>
+        <input
+          className="my-1 form-control"
+          type="number"
+          min={0}
+          value={productQTY}
+          placeholder="Product's QTY"
+          id="qty"
+          onChange={(e) => setProductQTY(Number(e.target.value))}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="price" className="my-1">
+          <strong>Product's Price</strong>
+        </label>
+        <input
+          type="number"
+          className="my-1 form-control"
+          id="price"
+          min={0}
+          value={productPrice}
+          step={0.01}
+          placeholder="Product's Price"
+          onChange={(e) => setProductPrice(Number(e.target.value))}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="discount" className="my-1">
+          <strong>Product's Discount</strong>
+        </label>
+        <input
+          type="number"
+          className="my-1 form-control"
+          id="discount"
+          value={productDiscount}
+          min={0}
+          step={0.01}
+          placeholder="Max value of Discount can be 50% of price"
+          onChange={(e) => setProductDiscount(Number(e.target.value))}
+        />
+      </div>
+      <div className="vat w-75 d-flex d-sm-flex flex-column flex-sm-row justify-content-around align-items-center my-1">
         <label htmlFor="vat">
           <strong>Product's VAT:</strong>
         </label>
@@ -98,7 +106,7 @@ const Form = ({ handleSubmit }) => {
         22%
       </div>
 
-      <button className="btn btn-outline-primary w-50 my-3 mx-auto">
+      <button className="btn btn-outline-primary btn-block my-3 mx-auto">
         Add Product
       </button>
     </form>

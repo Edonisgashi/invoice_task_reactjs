@@ -2,9 +2,9 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div>
-      <nav className="navbar navbar-dark bg-dark bg-opacity-75">
-        <a className="navbar-brand mx-5" href="#">
+    <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light ">
+        <a className="navbar-brand mx-auto" href="#">
           Invoice Calculator
         </a>
       </nav>
